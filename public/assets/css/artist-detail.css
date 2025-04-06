@@ -10,13 +10,7 @@
     margin-bottom: 40px;
 }
 
-.profile-title h1 {
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--dark-color);
-    position: relative;
-    display: inline-block;
-}
+
 
 .profile-title h1:after {
     content: '';
