@@ -1,0 +1,280 @@
+/* Music Page Styles */
+.music-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: var(--gradient);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-description {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 15px auto 0;
+}
+
+.music-content {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.music-filter {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    overflow-x: auto;
+}
+
+.filter-item {
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.filter-item:hover {
+    background-color: #f0f0f0;
+    color: var(--primary-color);
+}
+
+.filter-item.active {
+    background: var(--gradient);
+    color: white;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f7;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-left: auto;
+}
+
+.search-box i {
+    color: #999;
+    margin-right: 8px;
+}
+
+.search-box input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 5px 0;
+    font-size: 14px;
+    color: #333;
+    width: 150px;
+}
+
+.songs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    padding: 25px;
+}
+
+.no-songs {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 0;
+    color: #666;
+}
+
+.no-songs i {
+    font-size: 48px;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.no-songs p {
+    font-size: 18px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.pagination-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    border-radius: 8px;
+    background-color: #f5f5f7;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.pagination-btn.prev i {
+    margin-right: 8px;
+}
+
+.pagination-btn.next i {
+    margin-left: 8px;
+}
+
+.pagination-btn:hover {
+    transform: translateY(-2px);
+    background-color: #ececef;
+}
+
+.pagination-btn.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.page-indicator {
+    font-size: 14px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .songs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .pagination {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .pagination-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .page-indicator {
+        order: -1;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .songs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+    }
+    
+    .music-filter {
+        padding: 15px;
+    }
+    
+    .filter-item {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    .search-box {
+        padding: 4px 12px;
+    }
+    
+    .search-box input {
+        width: 100px;
+    }
+}
+
+/* Style cho highlight */
+.highlight {
+    background-color: rgba(255, 243, 149, 0.8);
+    padding: 0 2px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* Chỉnh form tìm kiếm */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f7;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-left: auto;
+}
+
+.search-box i {
+    color: #999;
+    margin-right: 8px;
+}
+
+.search-box input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 5px 0;
+    font-size: 14px;
+    color: #333;
+    width: 180px;
+}
+
+/* Badge hiển thị số kết quả tìm kiếm */
+.result-count {
+    display: inline-block;
+    background: var(--gradient);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+/* Chỉnh sửa link trong filter */
+.filter-item {
+    text-decoration: none;
+}
+
+/* Style cho search info */
+.search-info {
+    padding: 10px 25px;
+    background-color: rgba(106, 17, 203, 0.05);
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.search-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+

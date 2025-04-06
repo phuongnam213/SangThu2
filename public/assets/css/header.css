@@ -1,0 +1,249 @@
+/* Global Variables - Copy these to all CSS files */
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --dark-color: #222232;
+    --light-color: #f5f5f7;
+    --accent-color: #ff3a5e;
+    --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--light-color);
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo-holder {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.brand-name {
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 22px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-item a {
+    padding: 10px 5px;
+    font-weight: 500;
+    color: #333;
+    position: relative;
+}
+
+.nav-item a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--gradient);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-item a:hover:after {
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    min-width: 180px;
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 10;
+    padding: 10px 0;
+}
+
+.dropdown:hover .dropdown-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-item2 {
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-item2:hover {
+    background-color: rgba(106, 17, 203, 0.1);
+}
+
+.nav-item2 a {
+    display: block;
+    padding: 5px 0;
+}
+
+.user-menu {
+    background: var(--gradient);
+    color: white;
+    border-radius: 30px;
+    padding: 8px 15px;
+    margin-left: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.user-menu i {
+    margin-right: 5px;
+}
+
+.user-menu:hover {
+    box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+    transform: translateY(-2px);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.socials {
+    display: flex;
+    margin-left: 20px;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-icon svg {
+    fill: white;
+    width: 18px;
+    height: 18px;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+}
+
+/* Responsive Header Styles */
+@media (max-width: 992px) {
+    .main-nav {
+        position: fixed;
+        top: 80px;
+        right: -300px;
+        width: 280px;
+        height: calc(100vh - 80px);
+        background-color: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        overflow-y: auto;
+    }
+    
+    .main-nav.active {
+        right: 0;
+    }
+    
+    .nav-item {
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    .dropdown-list {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding-left: 15px;
+        display: none;
+    }
+    
+    .dropdown.active .dropdown-list {
+        display: block;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+}

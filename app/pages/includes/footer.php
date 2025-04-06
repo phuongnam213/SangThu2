@@ -1,4 +1,4 @@
-	<footer>
+<footer>
 		<div class="footer-div">
 			<ul>
 				<li><a href="">Home</a></li>

@@ -1,4 +1,4 @@
-	<footer style="display: block;">
+<footer style="display: block;">
  		<center>Copyright @<?=date("Y")?></center>
 	</footer>
 </body>
